@@ -19,7 +19,36 @@
     <link rel="stylesheet" href="./css/style1.css" />
   </head>
   <body>
-    <div class="nav-container">
+
+    <header>
+        <img class="logo" src="./img/SunGuitars_Logo-02.png" alt="logo Sun Guitars">
+        <div class="container-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-cart">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+              <div class="count-products">
+                <span id="contadorProductos">0</span>
+              </div>
+              <div class="container-cart-products hidden-cart">
+                <div class="cart-product">
+                  <div class="info-cart-product">
+                    <span class="cantidad-producto-carrito">1</span>
+                    <span class="titulo-producto-carrito">Epiphone Les Paul</span>
+                    <span class="precio-producto-carrito">670000</span>
+                  </div>
+
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+              <div class="cart-total">
+                <h3>TOTAL</h3>
+                <span class="total-pagar">670000</span>
+              </div>
+              
+        </div>
+    </header>
+    <!-- <div class="nav-container">
       <nav class="navbar">
         <h1 class="navbar-logo">SUN GUITARS</h1>
         <button class="ver-carrito" id="verCarrito">
@@ -28,10 +57,10 @@
             </svg>
         </button>
       </nav>
-    </div>
+    </div> -->
         <div class="banner">
             <div class="banner-container">
-              <h2>Bienvenido a SUN GUITARS.</h2>
+              <img class="logo-banner" src="./img/SunGuitars_Logo-04.png" alt="">
               <p>
                 Este sitio esta dedicado para los amantes de este bello instrumento
                 donde podras adquirir las mejores guitarras a precios increibles
@@ -104,6 +133,7 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/main2.js"></script>
   </body>
 </html>

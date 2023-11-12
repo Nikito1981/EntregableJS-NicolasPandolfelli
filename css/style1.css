@@ -1,6 +1,6 @@
 @font-face {
     font-family: Friz Quadrata;
-    src: url(../fonts/Fontspring-DEMO-pontiac_regular.otf)
+    src: url(../fonts/Friz\ Quadrata\ Regular.ttf)
   }
 * {
   font-family: "Friz Quadrata";
@@ -80,7 +80,6 @@ header{
 
   background-color: #fff;
   width: 400px;
-  height: 300px;
   z-index: 1;
   box-shadow: 0 ;
 }
@@ -104,19 +103,19 @@ header{
 
 .titulo-producto-carrito{
   color: #000;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .precio-producto-carrito{
   font-weight: 700;
-  font-size: 20px;
+  font-size: 13px;
   margin-left: 10px;
 
 }
 
 .cantidad-producto-carrito{
   font-weight: 400;
-  font-size: 20px;
+  font-size: 12px;
 
 }
 
@@ -128,12 +127,12 @@ header{
   align-items: center;
 }
 .cart-total h3{
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 500;
 }
 
 .total-pagar{
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 900;
 }
 .hidden-cart{

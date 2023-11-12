@@ -1,0 +1,41 @@
+[
+    {
+      "id": 1,
+      "producto":
+        "Epiphone Les Paul Traditional Pro IV Limited Edition Worn Wine Red",
+      "precio": 670,
+      "img": "./img/productos/Ep1.jpg"
+    },
+    {
+      "id": 2,
+      "producto": "Epiphone Les Paul Traditional Pro IV Limited Edition Worn Ebony",
+      "precio": 720,
+      "img": "./img/productos/Ep2.jpg"
+    },
+    {
+      "id": 3,
+      "producto":
+        "Fender Stratocaster HSS Plus Top Maple Fingerboard Limited Edition Blue Wurst",
+      "precio": 650,
+      "img": "./img/productos/Fender3.jpg"
+    },
+    {
+      "id": 4,
+      "producto":
+        "Fender Stratocaster HSS Plus Top Maple Fingerboard Limited Edition Sienna Sunburst",
+      "precio": 600,
+      "img": "./img/productos/fender2.jpg"
+    },
+    {
+      "id": 5,
+      "producto": "Schecter Research C1 Platinum Satin Transparent Midnight Blue",
+      "precio": 575,
+      "img": "./img/productos/Schecter1.jpg"
+    },
+    {
+      "id": 6,
+      "producto": "Schecter Research C1 Platinum Translucent Black",
+      "preci": 590,
+      "img": "./img/productos/Schecter2.jpg"
+    }
+  ]

@@ -41,88 +41,50 @@ function crearUsuario(e) {
   }
 }
 
+//  ------ productos --------- //
 
-
-const productos = [
-  {
-    id: 1,
-    producto:
-      "Epiphone Les Paul Traditional Pro IV Limited Edition Worn Wine Red",
-    precio: 670,
-    img: "./img/productos/Ep1.jpg",
-  },
-  {
-    id: 2,
-    producto: "Epiphone Les Paul Traditional Pro IV Limited Edition Worn Ebony",
-    precio: 720,
-    img: "./img/productos/Ep2.jpg",
-  },
-  {
-    id: 3,
-    producto:
-      "Fender Stratocaster HSS Plus Top Maple Fingerboard Limited Edition Blue Wurst",
-    precio: 650,
-    img: "./img/productos/Fender3.jpg",
-  },
-  {
-    id: 4,
-    producto:
-      "Fender Stratocaster HSS Plus Top Maple Fingerboard Limited Edition Sienna Sunburst",
-    precio: 600,
-    img: "./img/productos/fender2.jpg",
-  },
-  {
-    id: 5,
-    producto: "Schecter Research C1 Platinum Satin Transparent Midnight Blue",
-    precio: 575,
-    img: "./img/productos/Schecter1.jpg",
-  },
-  {
-    id: 6,
-    producto: "Schecter Research C1 Platinum Translucent Black",
-    precio: 590,
-    img: "./img/productos/Schecter2.jpg",
-  },
-];
 
 const shopContent = document.querySelector("#shopContent");
-const verCarrito = document.getElementById("verCarrito");
 
-function crearCards() {
-  productos.forEach((product) => {
-    
-    let content = document.createElement("div");
-    content.className = "card";
-    content.innerHTML = `
-        <div>
-            <img src="${product.img}" class="card-img-top" alt="producto">
-            <div class="card-body">
-                <h3>${product.producto}</h3>
-                <p class="precio">usd ${product.precio}</p>    
-                
-            </div>
-        </div>`;
+const pedirProductos = async () => {
+  const resp = await fetch('../productos.json')
+  const productosCargados = await resp.json()
+  console.log(productosCargados)
 
-    shopContent.append(content);
+  
 
-    let comprar = document.createElement("button");
-    comprar.innerText = "Agregar al Carrito";
-    comprar.className = "comprar";
-
-    content.append(comprar);
-    // comprar.addEventListener("click", () => {
-    //   carrito.push({
-    //     id: product.id,
-    //     img: product.img,
-    //     nombre: product.producto,
-    //     precio: product.precio,
-    //   });
-    //   console.log(carrito);
-    // });
-  });
+  function crearCards() {
+    productosCargados.forEach((product) => {
+      
+      let content = document.createElement("div");
+      content.className = "card";
+      content.innerHTML = `
+          <div>
+              <img src="${product.img}" class="card-img-top" alt="producto">
+              <div class="card-body">
+                  <h3>${product.producto}</h3>
+                  <p class="precio">usd ${product.precio}</p>    
+                  
+              </div>
+          </div>`;
+  
+      shopContent.append(content);
+  
+      let comprar = document.createElement("button");
+      comprar.innerText = "Agregar al Carrito";
+      comprar.className = "comprar";
+  
+      content.append(comprar);
+    });
+  }
+  
+  crearCards();
 }
 
-crearCards();
+pedirProductos()
+
+
+
 
 // Abrir - esconder carrito //
 

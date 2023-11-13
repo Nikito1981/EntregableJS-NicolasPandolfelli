@@ -46,12 +46,13 @@ function crearUsuario(e) {
 
 const shopContent = document.querySelector("#shopContent");
 
+// realizamos la peticion de los productos a la base de datos externa // 
+
 const pedirProductos = async () => {
   const resp = await fetch('../productos.json')
   const productosCargados = await resp.json()
-  console.log(productosCargados)
 
-  
+// creamos nuestras cards de productos // 
 
   function crearCards() {
     productosCargados.forEach((product) => {
@@ -69,6 +70,8 @@ const pedirProductos = async () => {
           </div>`;
   
       shopContent.append(content);
+
+      // agregamos el boton "Agregar al Carrito" creando un button // 
   
       let comprar = document.createElement("button");
       comprar.innerText = "Agregar al Carrito";
@@ -84,8 +87,6 @@ const pedirProductos = async () => {
 pedirProductos()
 
 
-
-
 // Abrir - esconder carrito //
 
 const btnCart = document.querySelector(".container-cart-icon");
@@ -95,6 +96,7 @@ const containerCartProducts = document.querySelector(
 btnCart.addEventListener("click", () => {
   containerCartProducts.classList.toggle("hidden-cart");
 });
+
 
 const cartInfo = document.querySelector(".cart-product");
 const rowProduct = document.querySelector(".row-product");
@@ -109,23 +111,23 @@ const contarProductos = document.querySelector('#contadorProductos');
 
 shopContent.addEventListener('click', e =>{
   if(e.target.classList.contains('comprar')){
-    const producto = e.target.parentElement;
+    const productoSeleccionado = e.target.parentElement;
 
     const infoProducto = {
       cantidad:1,
-      nombre:producto.querySelector('h3').innerText,
-      precio:producto.querySelector('p').innerText
+      nombre:productoSeleccionado.querySelector('h3').innerText,
+      precio:productoSeleccionado.querySelector('p').innerText
     };
 
-    const exists = allProducts.some(producto => producto.nombre === infoProducto.nombre)
+    const exists = allProducts.some(productoSeleccionado => productoSeleccionado.nombre === infoProducto.nombre)
     
     if(exists){
-      const products = allProducts.map(producto => {
-        if(producto.nombre === infoProducto.nombre){
-          producto.cantidad++;
-          return producto
+      const products = allProducts.map(productoSeleccionado => {
+        if(productoSeleccionado.nombre === infoProducto.nombre){
+          productoSeleccionado.cantidad++;
+          return productoSeleccionado
         }else{
-          return producto
+          return productoSeleccionado
         }
 
       })
@@ -133,12 +135,13 @@ shopContent.addEventListener('click', e =>{
         }else{
           allProducts = [...allProducts,infoProducto]
     }
+  }
 
 
     
 
     showHTML()
-  }
+  
   
 });
 
@@ -167,7 +170,7 @@ const showHTML = () => {
           <div class="info-cart-product">
               <span class='cantidad-producto-carrito'>${productoElegido.cantidad}</span>,
               <span class='titulo-producto-carrito'>${productoElegido.nombre}</span>
-              <span class='precio-producto-carrito'>${productoElegido.precio}</span>
+              <span class='precio-producto-carrito'>${parseFloat(productoElegido.precio.slice(4)).toFixed(2)}</span>
           </div>
 
           <svg xmlns="http://www.w3.org/2000/svg" 
@@ -185,20 +188,41 @@ const showHTML = () => {
 
     rowProduct.append(containerProduct)
 
+    // let realizarCompra = document.createElement("button");
+    //   realizarCompra.innerText = "Finalizar Compra";
+    //   comprar.className = "finalizar-compra";
+  
+    //   content.append(realizarCompra);
 
 
-    total = total + parseInt(productoElegido.cantidad * productoElegido.precio.slice(1))
+
+    total = total + (parseFloat(productoElegido.precio.slice(4)) * productoElegido.cantidad);
     totalOfProducts = totalOfProducts + productoElegido.cantidad;
 
   });
 
-  precioTotal.innerText = `(usd ${total})`
+  precioTotal.innerText = `(usd ${total.toFixed(2)})`;
   contarProductos.innerText = totalOfProducts;
-
-
 
   }
 
+  showHTML()
+
+  const btnFinalizarCompra = document.querySelector('.finalizar-compra-btn');
+  btnFinalizarCompra.addEventListener('click', finalizarCompra);
+
+  function finalizarCompra() {
+  // Acciones para finalizar la compra, por ejemplo:
+  Swal.fire({
+    icon: 'success',
+    title: 'Compra finalizada con éxito',
+    showConfirmButton: false,
+    timer: 1500,
+  });
+
+  allProducts = [];
+  showHTML();
+  }
 
 
 
@@ -215,15 +239,3 @@ const showHTML = () => {
 
 
 
-// verCarrito.addEventListener("click", () => {
-//   console.log("Clickeaste en el carrito");
-// });
-// console.log("¿Whatt?");
-// setTimeout(() => {
-//   console.log("Hello");
-// }, 2000);
-// console.log("bye");
-
-// setInterval(() => {
-//   console.log("Se ejectuta el intervalo");
-// }, 1500);

@@ -95,18 +95,27 @@ shopContent.addEventListener("click", (e) => {
 
 // ----- funcion para cancelar productos elegidos ----- //
 rowProduct.addEventListener("click", (e) => {
-  if (e.target.classList.contains("icon-close")) {
-    const productoAEliminar = e.target.parentElement.querySelector(
-      ".titulo-producto-carrito"
-    ).innerText;
-
-    allProducts = allProducts.filter(
-      (producto) => producto.nombre !== productoAEliminar
-    );
-
-    showHTML();
-  }
-});
+    if (e.target.classList.contains("icon-close")) {
+      const productoAEliminar = e.target.parentElement.querySelector(
+        ".titulo-producto-carrito"
+      ).innerText;
+  
+      const productoEncontrado = allProducts.find(
+        (producto) => producto.nombre === productoAEliminar
+      );
+  
+      if (productoEncontrado) {
+        productoEncontrado.cantidad--;
+  
+        // Filtrar los productos que tienen una cantidad mayor que cero
+        allProducts = allProducts.filter(
+          (producto) => producto.cantidad > 0
+        );
+      }
+  
+      showHTML();
+    }
+  });
 
 
 const showHTML = () => {
@@ -175,7 +184,7 @@ function finalizarCompra() {
   } else {
     Swal.fire({
       icon: 'success',
-      title: 'Compra finalizada con éxito',
+      title: 'Gracias por tu compra',
       text: 'Se enviará un correo electrónico con la información de pago a: ' + usuario.email,
       showConfirmButton: false,
       timer: 3000,

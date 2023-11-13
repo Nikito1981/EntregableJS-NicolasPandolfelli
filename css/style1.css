@@ -150,17 +150,6 @@ header{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 ul {
   list-style-type: none;
 }
@@ -172,7 +161,7 @@ a {
 
 /* ------- banner -------- */
 .banner {
-  background-image: url(../img/Guitars_bw.png);
+  background-image: url(../img/headers/Guitars_bw_screen.png);
   background-size: 100%;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -194,8 +183,8 @@ a {
 .banner-container {
   p {
     margin-top: 100px;
-    font-weight: 900;
-    font-size: 1.2em;
+    font-weight: 300;
+    font-size: 1.3em;
     text-align: center;
     color: #ffffff;
   }
@@ -206,7 +195,7 @@ a {
   background-color: rgb(36, 29, 29);
   padding: 20px;
   h2 {
-    color: #ffffff;
+    color: #86b592;
     text-align: center;
   }
 }
@@ -241,7 +230,7 @@ textarea {
 }
 .btn{
   margin-top: 20px;
-  background-color: #ff0000;
+  background-color: #86b592;
   color: #ffffff;
   width:200px;
   padding: 6px;

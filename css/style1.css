@@ -187,7 +187,7 @@ a {
 }
 .banner-container {
   p {
-    margin-top: 70px;
+    margin-top: 80px;
     font-weight: 300;
     font-size: 1.3rem;
     text-align: center;
@@ -200,6 +200,7 @@ a {
   background-color: #241d1d;
   padding: 20px;
   h2 {
+    font-size: 2rem;
     color: #fefffe;
     text-align: center;
   }

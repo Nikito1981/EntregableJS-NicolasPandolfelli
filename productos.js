@@ -193,7 +193,7 @@ function finalizarCompra() {
       title: 'Gracias por tu compra',
       text: 'Se enviará un correo electrónico con la información de pago a: ' + usuario.email,
       showConfirmButton: false,
-      timer: 3000,
+      timer: 6000,
     });
 
   allProducts = [];

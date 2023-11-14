@@ -8,6 +8,11 @@
   margin: 0;
   box-sizing: border-box;
 }
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 h1,
 h2,
@@ -108,7 +113,7 @@ header{
 
 .precio-producto-carrito{
   font-weight: 700;
-  font-size: 13px;
+  font-size: 1.3rem;
   margin-left: 10px;
 
 }
@@ -184,7 +189,7 @@ a {
   p {
     margin-top: 70px;
     font-weight: 300;
-    font-size: 1.3em;
+    font-size: 1.3rem;
     text-align: center;
     color: #ffffff;
   }
@@ -210,7 +215,7 @@ textarea,
 select {
   margin: 10px 0 0 0;
   width: 30%;
-  font-size: 0.7em;
+  font-size: 1rem;
 }
 
 input,
@@ -242,7 +247,7 @@ textarea {
 
 
 .precio{
-    font-size: 1em;
+    font-size: 1.5rem;
     font-weight: 900;
     color: black;
     text-align: center;
@@ -313,7 +318,7 @@ textarea {
 }
 
 .card h3{
-    font-size: 1em;
+    font-size: 1rem;
     text-align: center;
 }
 .card-body{

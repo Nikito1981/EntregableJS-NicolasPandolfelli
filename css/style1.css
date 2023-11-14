@@ -165,11 +165,11 @@ a {
   background-size: 100%;
   background-position: bottom;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 80vh;
 }
 .logo-banner{
   width: 40%;
-  margin-top: 100px;
+  margin-top: 60px;
   align-self: center;
   
 }
@@ -182,7 +182,7 @@ a {
 }
 .banner-container {
   p {
-    margin-top: 100px;
+    margin-top: 70px;
     font-weight: 300;
     font-size: 1.3em;
     text-align: center;
@@ -192,10 +192,10 @@ a {
 
 /* ----- formulario registro ------- */
 .form-container {
-  background-color: rgb(36, 29, 29);
+  background-color: #241d1d;
   padding: 20px;
   h2 {
-    color: #86b592;
+    color: #fefffe;
     text-align: center;
   }
 }
@@ -230,7 +230,7 @@ textarea {
 }
 .btn{
   margin-top: 20px;
-  background-color: #86b592;
+  background-color: #f30000;
   color: #ffffff;
   width:200px;
   padding: 6px;

@@ -8,11 +8,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-*{
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
 
 h1,
 h2,
@@ -75,7 +70,7 @@ header{
 }
 
 #contadorProductos{
-  font-size: 12px;
+  font-size: 0.8rem;
 }
 
 .container-cart-products{
@@ -108,19 +103,19 @@ header{
 
 .titulo-producto-carrito{
   color: #000;
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 .precio-producto-carrito{
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin-left: 10px;
 
 }
 
 .cantidad-producto-carrito{
   font-weight: 400;
-  font-size: 12px;
+  font-size: 1rem;
 
 }
 
@@ -132,12 +127,12 @@ header{
   align-items: center;
 }
 .cart-total h3{
-  font-size: 15px;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
 .total-pagar{
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 900;
 }
 .hidden-cart{
@@ -198,12 +193,12 @@ a {
 /* ----- formulario registro ------- */
 .form-container {
   background-color: #241d1d;
-  padding: 20px;
-  h2 {
-    font-size: 2rem;
-    color: #fefffe;
-    text-align: center;
-  }
+  padding: 20px;  
+}
+.form-container h2 {
+  font-size: 2rem;
+  color: burlywood;
+  text-align: center;
 }
 .formulario {
   padding: 20px;
@@ -216,7 +211,7 @@ textarea,
 select {
   margin: 10px 0 0 0;
   width: 30%;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 input,
@@ -241,11 +236,9 @@ textarea {
   width:200px;
   padding: 6px;
   border: none;
-  border-radius: 3px;
-  
+  border-radius: 3px;  
    
 }
-
 
 .precio{
     font-size: 1.5rem;

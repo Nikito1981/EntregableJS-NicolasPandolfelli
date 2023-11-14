@@ -1,4 +1,3 @@
-//  ------ productos --------- //
 
 const shopContent = document.querySelector("#shopContent");
 

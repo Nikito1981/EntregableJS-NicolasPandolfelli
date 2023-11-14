@@ -51,6 +51,7 @@ btnCart.addEventListener("click", () => {
   containerCartProducts.classList.toggle("hidden-cart");
 });
 
+
 const cartInfo = document.querySelector(".cart-product");
 const rowProduct = document.querySelector(".row-product");
 
@@ -63,6 +64,10 @@ const contarProductos = document.querySelector("#contadorProductos");
 shopContent.addEventListener("click", (e) => {
   if (e.target.classList.contains("comprar")) {
     const productoSeleccionado = e.target.parentElement;
+    containerCartProducts.classList.remove("hidden-cart");
+    containerCartProducts.scrollIntoView({ behavior: 'smooth' });
+    
+    
 
     const infoProducto = {
       cantidad: 1,
@@ -89,6 +94,7 @@ shopContent.addEventListener("click", (e) => {
       allProducts = [...allProducts, infoProducto];
     }
   }
+
 
   showHTML();
 });

@@ -5,7 +5,7 @@ const shopContent = document.querySelector("#shopContent");
 // realizamos la peticion de los productos a la base de datos externa //
 
 const pedirProductos = async () => {
-  const resp = await fetch("../productos.json");
+  const resp = await fetch("./productos.json");
   const productosCargados = await resp.json();
 
   // creamos nuestras cards de productos //

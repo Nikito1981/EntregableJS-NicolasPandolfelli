@@ -1,7 +1,7 @@
 
 const shopContent = document.querySelector("#shopContent");
 
-// realizamos la peticion de los productos a la base de datos externa //
+// realizamos la peticion de los productos  //
 
 const pedirProductos = async () => {
   const resp = await fetch("./productos.json");
@@ -25,7 +25,7 @@ const pedirProductos = async () => {
 
       shopContent.append(content);
 
-      // agregamos el boton "Agregar al Carrito" creando un button //
+      // agregamos el boton "Agregar al Carrito"  //
 
       let comprar = document.createElement("button");
       comprar.innerText = "Agregar al Carrito";
@@ -112,7 +112,7 @@ rowProduct.addEventListener("click", (e) => {
       if (productoEncontrado) {
         productoEncontrado.cantidad--;
   
-        // Filtrar los productos que tienen una cantidad mayor que cero
+  
         allProducts = allProducts.filter(
           (producto) => producto.cantidad > 0
         );
